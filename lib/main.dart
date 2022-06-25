@@ -1,9 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 void main(List<String> args) {
-  runApp(HomePage());
+  runApp(const HomePage());
 }
 
 class HomePage extends StatelessWidget {
@@ -14,14 +15,16 @@ class HomePage extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.red,
-        body: Column(
-          children: const [
-            Text(
+        body: Container(
+            alignment: Alignment.center,
+            child: Text(
               'Hello World',
-              style: TextStyle(color: Colors.white),
-            )
-          ],
-        ),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                  decoration: TextDecoration.combine(
+                      [TextDecoration.overline, TextDecoration.underline])),
+            )),
       ),
     );
   }
